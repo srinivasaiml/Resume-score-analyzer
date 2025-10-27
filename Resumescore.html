@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analyzer Pro</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="Resumeats.css">
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <div class="glass-card">
+            <h1><i class="fas fa-sparkles"></i> Resume Analyzer Pro</h1>
+            <p class="subtitle">Unlock your resume's potential with AI-powered insights</p>
+
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-value" id="analysisCount">0</span>
+                    <span class="stat-label">Analyses</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">95%</span>
+                    <span class="stat-label">Accuracy</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">2s</span>
+                    <span class="stat-label">Speed</span>
+                </div>
+            </div>
+
+            <div class="upload-zone" id="uploadZone">
+                <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                <div class="upload-text">Drop your resume here or click to browse</div>
+                <div class="upload-subtext">Supports PDF, DOCX, TXT (Max 10MB)</div>
+                <input type="file" id="resumeFile" class="file-input" accept=".pdf,.txt,.docx">
+            </div>
+
+            <div class="file-info" id="fileInfo">
+                <i class="fas fa-file-alt file-icon"></i>
+                <div class="file-details">
+                    <div class="file-name" id="fileName">document.pdf</div>
+                    <div class="file-size" id="fileSize">1.2 MB</div>
+                </div>
+                <i class="fas fa-check-circle" style="font-size: 2em; color: rgba(255,255,255,0.8);"></i>
+            </div>
+
+            <button class="analyze-btn" id="analyzeBtn">
+                <span><i class="fas fa-magic"></i> Analyze My Resume</span>
+            </button>
+
+            <div class="loader" id="loader">
+                <div class="loader-spinner"></div>
+                <div class="loader-text">Analyzing your resume with AI...</div>
+            </div>
+
+            <div class="results" id="results">
+                <div class="score-hero">
+                    <div class="score-label">Your Overall Score</div>
+                    <div class="score-display" id="overallScore">85</div>
+                    <div class="score-rating" id="scoreRating">Excellent!</div>
+                </div>
+
+                <div class="chart-section">
+                    <div class="section-title">
+                        <div class="section-icon"><i class="fas fa-chart-radar"></i></div>
+                        Performance Breakdown
+                    </div>
+                    <canvas id="scoreChart"></canvas>
+
+                    <div class="category-grid">
+                        <div class="category-card">
+                            <div class="category-icon"><i class="fas fa-tools"></i></div>
+                            <div class="category-name">Skills</div>
+                            <div class="category-score" id="skillsScore">-</div>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon"><i class="fas fa-briefcase"></i></div>
+                            <div class="category-name">Experience</div>
+                            <div class="category-score" id="experienceScore">-</div>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <div class="category-name">Education</div>
+                            <div class="category-score" id="educationScore">-</div>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon"><i class="fas fa-certificate"></i></div>
+                            <div class="category-name">Certifications</div>
+                            <div class="category-score" id="certificationsScore">-</div>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon"><i class="fas fa-project-diagram"></i></div>
+                            <div class="category-name">Projects</div>
+                            <div class="category-score" id="projectsScore">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tips-section">
+                    <div class="section-title">
+                        <div class="section-icon"><i class="fas fa-lightbulb"></i></div>
+                        Personalized Recommendations
+                    </div>
+                    <div id="tipsContainer"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>✨ Designed with passion by Srinivas P | Powered by AI Analytics</p>
+        </footer>
+    </div>
+
+    <script src="Resumeats.js">
+       
+    </script>
+</body>
+</html>
